@@ -1,6 +1,6 @@
 FROM  alpine:latest
 
-RUN adduser -S -D -H -h /home miner
+RUN adduser -S -D -H -h /home app
 
 RUN apk --no-cache upgrade \
  && apk --no-cache add \
@@ -27,6 +27,6 @@ RUN git clone https://github.com/xmrig/xmrig \
  
 RUN apk del build-base cmake 
 
-USER miner
+USER app
 WORKDIR /home/xmrig
 ENTRYPOINT  ["dumb-init"]
