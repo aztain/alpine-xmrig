@@ -29,5 +29,5 @@ RUN apk del build-base cmake
 
 USER app
 WORKDIR /home/xmrig
-ENTRYPOINT  ["dumb-init"]
-CMD ["./xmrig"]
+ENTRYPOINT  ["dumb-init","./xmrig"]
+CMD ["--help"]
